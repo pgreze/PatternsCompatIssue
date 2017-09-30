@@ -25,6 +25,17 @@ android {
     }
 }
 
+tasks.withType(Test) {
+    testLogging {
+        exceptionFormat "full"
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        showStandardStreams true
+        events = ["failed", "standardError"]
+    }
+}
+
 repositories {
     google()
     jcenter()
